@@ -32,7 +32,6 @@ Rational* Rational::operator+(const Rational& other)
 	if (this->m_b%other.m_b==0 || other.m_b%this->m_b==0)
 	{
 		int x = this->m_b>other.m_b?this->m_b:other.m_b;
-		std::cout << "Test x=" << x << std::endl;
 		return new Rational(((x / this->m_b) * this->m_a) + ((x / other.m_b) * other.m_a), x);
 	}
 	int y = this->m_b * other.m_b;
@@ -43,7 +42,6 @@ Rational* Rational::operator-(const Rational& other)
 	if (this->m_b % other.m_b == 0 || other.m_b % this->m_b == 0)
 	{
 		int x = this->m_b > other.m_b ? this->m_b : other.m_b;
-		std::cout << "Test x=" << x << std::endl;
 		return new Rational(((x / this->m_b) * this->m_a) - ((x / other.m_b) * other.m_a), x);
 	}
 	int y = this->m_b * other.m_b;
