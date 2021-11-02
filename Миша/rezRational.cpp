@@ -26,7 +26,19 @@ Rational* Rational::Inverse()
 
 std::string Rational::ToStr()
 {
-	return std::to_string(m_a) + "/" + std::to_string(m_b);
+	//Для корректной работы нужно привести к нормальной форме
+	if (m_a == 0)
+	{
+		return "0";
+	}
+	else if (m_b == 1)
+	{
+		return std::to_string(m_a);
+	}
+	else
+	{
+		return std::to_string(m_a) + "/" + std::to_string(m_b);
+	}
 }
 //операции с объектами класса
 void Rational::operator=(const Rational* other)
